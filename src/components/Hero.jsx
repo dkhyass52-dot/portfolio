@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaArrowRight, FaChevronDown, FaEye } from "react-icons/fa";
+import { FaArrowRight, FaEye } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 import heroDark from "../assets/images/hero-dark.png";
 import heroLight from "../assets/images/hero-light.png";
@@ -10,7 +10,7 @@ function Hero() {
   return (
     <motion.section
       id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden px-2"
       initial={{ scale: 1.08 }}
       animate={{ scale: 1 }}
       transition={{ duration: 2, ease: "easeOut" }}
@@ -29,19 +29,19 @@ function Hero() {
         }`}
       />
 
-      {/* Halo lumineux */}
-      <div className="absolute left-24 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#10B981]/20 blur-[140px] rounded-full"></div>
+      {/* Halo */}
+      <div className="absolute left-1/2 md:left-24 top-1/2 -translate-x-1/2 md:translate-x-0 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-[#10B981]/20 blur-[120px] rounded-full"></div>
 
       {/* Contenu */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-8">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-8">
         <motion.div
-          className="max-w-xl"
+          className="max-w-xl text-center md:text-left mx-auto md:mx-0"
           initial={{ opacity: 0, x: -60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1 }}
         >
           <motion.h1
-            className={`text-5xl md:text-7xl font-extrabold leading-tight ${
+            className={`text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight ${
               theme === "dark" ? "text-white" : "text-slate-900"
             }`}
             initial={{ opacity: 0, y: 40 }}
@@ -54,7 +54,7 @@ function Hero() {
           </motion.h1>
 
           <motion.h2
-            className={`mt-6 text-2xl md:text-3xl font-semibold ${
+            className={`mt-5 text-xl sm:text-2xl md:text-3xl font-semibold ${
               theme === "dark" ? "text-white" : "text-slate-800"
             }`}
             initial={{ opacity: 0 }}
@@ -65,7 +65,7 @@ function Hero() {
           </motion.h2>
 
           <motion.p
-            className={`mt-5 text-lg leading-relaxed ${
+            className={`mt-5 text-base sm:text-lg leading-relaxed max-w-lg mx-auto md:mx-0 ${
               theme === "dark" ? "text-gray-300" : "text-slate-600"
             }`}
             initial={{ opacity: 0 }}
@@ -77,7 +77,7 @@ function Hero() {
 
           {/* Boutons */}
           <motion.div
-            className="mt-10 flex flex-wrap gap-5"
+            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2 }}
@@ -90,7 +90,7 @@ function Hero() {
                 boxShadow: "0 15px 35px rgba(16,185,129,.45)",
               }}
               whileTap={{ scale: 0.96 }}
-              className="bg-[#10B981] text-black px-8 py-4 rounded-xl font-semibold flex items-center gap-3"
+              className="w-full sm:w-auto justify-center bg-[#10B981] text-black px-8 py-4 rounded-xl font-semibold flex items-center gap-3"
             >
               Mes projets
               <FaArrowRight />
@@ -105,7 +105,7 @@ function Hero() {
                 y: -5,
               }}
               whileTap={{ scale: 0.96 }}
-              className={`border-2 border-[#10B981] px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all ${
+              className={`w-full sm:w-auto justify-center border-2 border-[#10B981] px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all ${
                 theme === "dark"
                   ? "bg-transparent text-[#10B981] hover:bg-[#10B981] hover:text-black"
                   : "bg-white/80 backdrop-blur-sm text-[#10B981] hover:bg-[#10B981] hover:text-black"

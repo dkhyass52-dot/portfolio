@@ -37,9 +37,9 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 bg-white dark:bg-linear-to-b dark:from-[#08131F] dark:via-[#0F172A] dark:to-[#08131F] transition-colors duration-500"
+      className="py-20 md:py-24 lg:py-32 bg-white dark:bg-linear-to-b dark:from-[#08131F] dark:via-[#0F172A] dark:to-[#08131F] transition-colors duration-500"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Titre */}
 
@@ -48,23 +48,24 @@ function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: .8 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <p className="uppercase tracking-[5px] font-semibold text-[#10B981]">
+          <p className="uppercase tracking-[4px] md:tracking-[5px] font-semibold text-[#10B981]">
             Contact
           </p>
 
-          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mt-3">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mt-3">
             Travaillons ensemble
           </h2>
 
-          <p className="text-gray-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto leading-8">
+          <p className="text-gray-600 dark:text-gray-400 mt-5 max-w-2xl mx-auto leading-7 md:leading-8 text-base md:text-lg">
             Vous avez une idée de projet, une collaboration ou une question ?
-            N'hésitez pas à me contacter. Je vous répondrai dans les plus brefs délais.
+            N'hésitez pas à me contacter. Je vous répondrai dans les plus brefs
+            délais.
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-14">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
 
           {/* Informations */}
 
@@ -73,23 +74,23 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .7 }}
             viewport={{ once: true }}
-            className="space-y-6"
+            className="space-y-5 md:space-y-6"
           >
 
-            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-6 hover:border-[#10B981]/50 transition">
+            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-5 md:p-6 hover:border-[#10B981]/50 transition">
 
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4">
 
-                <div className="w-16 h-16 rounded-2xl bg-[#10B981]/15 flex items-center justify-center">
-                  <FaEnvelope className="text-[#10B981] text-2xl" />
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#10B981]/15 flex items-center justify-center flex-shrink-0">
+                  <FaEnvelope className="text-[#10B981] text-xl md:text-2xl" />
                 </div>
 
                 <div>
-                  <h3 className="text-gray-900 dark:text-white font-semibold text-lg">
+                  <h3 className="text-gray-900 dark:text-white font-semibold text-base md:text-lg">
                     Adresse e-mail
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 break-all text-sm md:text-base">
                     dkhyass52@gmail.com
                   </p>
                 </div>
@@ -97,49 +98,44 @@ function Contact() {
               </div>
 
             </div>
+                        <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-5 md:p-6 hover:border-[#10B981]/50 transition">
 
-            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-6 hover:border-[#10B981]/50 transition">
+              <div className="flex items-center gap-4">
 
-              <div className="flex items-center gap-5">
-
-                <div className="w-16 h-16 rounded-2xl bg-[#10B981]/15 flex items-center justify-center">
-                  <FaPhone className="text-[#10B981] text-2xl" />
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#10B981]/15 flex items-center justify-center flex-shrink-0">
+                  <FaPhone className="text-[#10B981] text-xl md:text-2xl" />
                 </div>
 
                 <div>
-
-                  <h3 className="text-gray-900 dark:text-white font-semibold text-lg">
+                  <h3 className="text-gray-900 dark:text-white font-semibold text-base md:text-lg">
                     Téléphone
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                     +229 XX XX XX XX
                   </p>
-
                 </div>
 
               </div>
 
             </div>
 
-            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-6 hover:border-[#10B981]/50 transition">
+            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-5 md:p-6 hover:border-[#10B981]/50 transition">
 
-              <div className="flex items-center gap-5">
+              <div className="flex items-center gap-4">
 
-                <div className="w-16 h-16 rounded-2xl bg-[#10B981]/15 flex items-center justify-center">
-                  <FaMapMarkerAlt className="text-[#10B981] text-2xl" />
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-[#10B981]/15 flex items-center justify-center flex-shrink-0">
+                  <FaMapMarkerAlt className="text-[#10B981] text-xl md:text-2xl" />
                 </div>
 
                 <div>
-
-                  <h3 className="text-gray-900 dark:text-white font-semibold text-lg">
+                  <h3 className="text-gray-900 dark:text-white font-semibold text-base md:text-lg">
                     Localisation
                   </h3>
 
-                  <p className="text-gray-600 dark:text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
                     Cotonou, Bénin
                   </p>
-
                 </div>
 
               </div>
@@ -157,10 +153,11 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .7 }}
             viewport={{ once: true }}
-            className="bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none rounded-3xl p-8 space-y-6"
+            className="bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none rounded-3xl p-5 sm:p-6 lg:p-8 space-y-5 md:space-y-6"
           >
+
             <div>
-              <label className="block text-gray-800 dark:text-white mb-2 font-medium">
+              <label className="block text-gray-800 dark:text-white mb-2 font-medium text-sm md:text-base">
                 Nom complet
               </label>
 
@@ -169,7 +166,7 @@ function Contact() {
                 name="name"
                 placeholder="Votre nom"
                 required
-                className="w-full px-5 py-4 rounded-xl
+                className="w-full px-4 md:px-5 py-3 md:py-4 rounded-xl
                 bg-white dark:bg-[#111827]
                 border border-gray-300 dark:border-white/10
                 text-gray-900 dark:text-white
@@ -181,7 +178,7 @@ function Contact() {
             </div>
 
             <div>
-              <label className="block text-gray-800 dark:text-white mb-2 font-medium">
+              <label className="block text-gray-800 dark:text-white mb-2 font-medium text-sm md:text-base">
                 Adresse e-mail
               </label>
 
@@ -190,7 +187,7 @@ function Contact() {
                 name="email"
                 placeholder="exemple@email.com"
                 required
-                className="w-full px-5 py-4 rounded-xl
+                className="w-full px-4 md:px-5 py-3 md:py-4 rounded-xl
                 bg-white dark:bg-[#111827]
                 border border-gray-300 dark:border-white/10
                 text-gray-900 dark:text-white
@@ -202,16 +199,16 @@ function Contact() {
             </div>
 
             <div>
-              <label className="block text-gray-800 dark:text-white mb-2 font-medium">
+              <label className="block text-gray-800 dark:text-white mb-2 font-medium text-sm md:text-base">
                 Votre message
               </label>
 
               <textarea
-                rows="7"
+                rows="6"
                 name="message"
                 placeholder="Décrivez votre projet ou votre besoin..."
                 required
-                className="w-full px-5 py-4 rounded-xl
+                className="w-full px-4 md:px-5 py-3 md:py-4 rounded-xl
                 bg-white dark:bg-[#111827]
                 border border-gray-300 dark:border-white/10
                 text-gray-900 dark:text-white
@@ -230,7 +227,7 @@ function Contact() {
               }}
               whileTap={{ scale: 0.97 }}
               type="submit"
-              className="w-full py-4 rounded-xl bg-[#10B981] text-black font-bold flex items-center justify-center gap-3 transition"
+              className="w-full py-3 md:py-4 rounded-xl bg-[#10B981] text-black font-bold flex items-center justify-center gap-3 transition"
             >
               <FaPaperPlane />
               Envoyer le message
@@ -239,13 +236,14 @@ function Contact() {
             <p className="text-center text-gray-600 dark:text-gray-500 text-sm">
               Je réponds généralement sous 24 heures.
             </p>
+
           </motion.form>
 
-</div>
+        </div>
 
-</div>
-</section>
-);
+      </div>
+    </section>
+  );
 }
 
 export default Contact;
