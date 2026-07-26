@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { FaArrowRight, FaEye } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
-import heroDark from "../assets/images/hero-dark.png";
-import heroLight from "../assets/images/hero-light.png";
+import heroDark from "../assets/images/hero-light2.png";
+import heroLight from "../assets/images/hero-light2.png";
 
 function Hero() {
   const { theme } = useTheme();
@@ -66,7 +66,7 @@ function Hero() {
 
           <motion.p
             className={`mt-5 text-base sm:text-lg leading-relaxed max-w-lg mx-auto md:mx-0 ${
-              theme === "dark" ? "text-gray-300" : "text-slate-600"
+              theme === "dark" ? "text-gray-300" : "text-slate-900"
             }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
