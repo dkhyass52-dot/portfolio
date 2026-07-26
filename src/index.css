@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Active le mode sombre avec la classe .dark */
-/* Removed unsupported at-rule @custom-variant; the dark mode is handled via the .dark selector below */
+@custom-variant dark (&:where(.dark, .dark *));
 
 html {
   scroll-behavior: smooth;
