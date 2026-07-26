@@ -117,20 +117,6 @@ function Hero() {
           </motion.div>
         </motion.div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className={`absolute bottom-10 left-1/2 -translate-x-1/2 ${
-          theme === "dark" ? "text-white" : "text-slate-700"
-        }`}
-        animate={{ y: [0, 12, 0] }}
-        transition={{
-          repeat: Infinity,
-          duration: 1.8,
-        }}
-      >
-        <FaChevronDown size={24} />
-      </motion.div>
     </motion.section>
   );
 }
