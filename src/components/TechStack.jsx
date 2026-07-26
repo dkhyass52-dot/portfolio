@@ -36,76 +36,61 @@ function TechStack() {
   ];
 
   return (
-    <section
-      className={`py-24 overflow-hidden transition-all duration-500 ${
-        theme === "dark"
-          ? "bg-[#0B0F19]"
-          : "bg-gray-50"
-      }`}
-    >
-      <div className="text-center mb-14">
-        <h2
-          className={`text-4xl font-bold ${
-            theme === "dark"
-              ? "text-white"
-              : "text-slate-900"
-          }`}
-        >
-          Technologies
-        </h2>
+  <section
+    className={`py-24 overflow-hidden transition-all duration-500 ${
+      theme === "dark" ? "bg-[#0B0F19]" : "bg-gray-50"
+    }`}
+  >
+    <div className="text-center mb-16">
+      <h2
+        className={`text-4xl font-bold ${
+          theme === "dark" ? "text-white" : "text-slate-900"
+        }`}
+      >
+        Technologies
+      </h2>
 
-        <p
-          className={`mt-3 ${
-            theme === "dark"
-              ? "text-gray-400"
-              : "text-slate-600"
-          }`}
-        >
-          Les technologies que j'utilise pour créer des applications modernes.
-        </p>
-      </div>
+      <p
+        className={`mt-3 ${
+          theme === "dark" ? "text-gray-400" : "text-slate-600"
+        }`}
+      >
+        Les technologies que j'utilise au quotidien.
+      </p>
+    </div>
 
-      <div className="relative overflow-hidden">
-        <motion.div
-          className="flex gap-8"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        >
-          {[...technologies, ...technologies].map((tech, index) => (
+    <div className="overflow-hidden">
+      <motion.div
+        className="flex items-center gap-16 whitespace-nowrap"
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{
+          duration: 18,
+          repeat: Infinity,
+          ease: "linear",
+        }}
+      >
+        {[...technologies, ...technologies].map((tech, index) => (
+          <motion.div
+            key={index}
+            whileHover={{
+              scale: 1.25,
+              rotate: 8,
+            }}
+            transition={{ duration: 0.2 }}
+            className="flex items-center justify-center"
+          >
             <div
-              key={index}
-              className={`min-w-45 rounded-2xl p-8 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:border-[#10B981] ${
-                theme === "dark"
-                  ? "bg-[#111827] border border-white/10"
-                  : "bg-white border border-gray-200 shadow-md hover:shadow-xl"
-              }`}
+              className="text-6xl md:text-7xl"
+              style={{ color: tech.color }}
             >
-              <div
-                className="text-6xl mb-4"
-                style={{ color: tech.color }}
-              >
-                {tech.icon}
-              </div>
-
-              <h3
-                className={`font-semibold ${
-                  theme === "dark"
-                    ? "text-white"
-                    : "text-slate-900"
-                }`}
-              >
-                {tech.name}
-              </h3>
+              {tech.icon}
             </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
+          </motion.div>
+        ))}
+      </motion.div>
+    </div>
+  </section>
+);
 }
 
 export default TechStack;

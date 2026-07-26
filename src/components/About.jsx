@@ -6,7 +6,7 @@ import {
   FaDatabase,
   FaCheckCircle,
 } from "react-icons/fa";
-import aboutImage from "../assets/images/about-image.png";
+import aboutImage from "../assets/images/about.jpeg";
 
 function About() {
   return (
