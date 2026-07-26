@@ -34,7 +34,7 @@ function Services() {
   return (
     <section
       id="services"
-      className="py-32 bg-gradient-to-b from-[#08131F] to-[#0F172A]"
+        className="py-32 bg-linear-to-b from-gray-100 to-white dark:from-[#08131F] dark:to-[#0F172A] transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -49,11 +49,11 @@ function Services() {
             Mes Services
           </p>
 
-          <h2 className="text-5xl font-bold text-white mt-4">
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mt-4">
             Ce que je peux réaliser
           </h2>
 
-          <p className="text-gray-400 mt-6 max-w-2xl mx-auto leading-8">
+          <p className="text-gray-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto leading-8">
             J'accompagne les entreprises et les particuliers dans la création
             d'applications web modernes, performantes et adaptées à leurs besoins.
           </p>
@@ -76,9 +76,11 @@ function Services() {
                 scale: 1.02,
               }}
               className="relative overflow-hidden rounded-3xl
-              bg-white/5 backdrop-blur-xl
-              border border-white/10
-              p-8 group"
+              bg-white dark:bg-white/5
+              backdrop-blur-xl
+              border border-gray-200 dark:border-white/10
+              shadow-lg dark:shadow-none
+              p-8 group transition-all duration-300"
             >
 
               <div className="absolute -top-16 -right-16 w-40 h-40 rounded-full bg-[#10B981]/10 blur-3xl group-hover:bg-[#10B981]/20 transition duration-500"></div>
@@ -89,11 +91,11 @@ function Services() {
                   {service.icon}
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-5">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-5">
                   {service.title}
                 </h3>
 
-                <p className="text-gray-400 leading-8 mb-8">
+                <p className="text-gray-600 dark:text-gray-400 leading-8 mb-8">
                   {service.description}
                 </p>
 
@@ -102,13 +104,12 @@ function Services() {
                   {service.tech.map((tech, i) => (
                     <span
                       key={i}
-                      className="px-4 py-2 rounded-full bg-[#10B981]/10 text-[#10B981] text-sm"
+                      className="px-4 py-2 rounded-full bg-[#10B981]/10 text-[#10B981] text-sm font-medium"
                     >
                       {tech}
                     </span>
                   ))}
-
-                </div>
+                                  </div>
 
                 <button
                   className="flex items-center gap-2 text-[#10B981]

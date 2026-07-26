@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { FaArrowRight, FaChevronDown, FaEye } from "react-icons/fa";
-import background from "../assets/images/hero4.png";
+import { useTheme } from "../context/ThemeContext";
+import heroDark from "../assets/images/hero-dark.png";
+import heroLight from "../assets/images/hero-light.png";
 
 function Hero() {
+  const { theme } = useTheme();
+
   return (
     <motion.section
       id="home"
@@ -11,13 +15,19 @@ function Hero() {
       animate={{ scale: 1 }}
       transition={{ duration: 2, ease: "easeOut" }}
       style={{
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(${theme === "dark" ? heroDark : heroLight})`,
         backgroundSize: "cover",
-        backgroundPosition: "center 15%",
+        backgroundPosition: "center",
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/40 to-black/20"></div>
+      <div
+        className={`absolute inset-0 transition-all duration-500 ${
+          theme === "dark"
+            ? "bg-linear-to-r from-black/75 via-black/45 to-black/20"
+            : "bg-linear-to-r from-white/20 via-white/5 to-transparent"
+        }`}
+      />
 
       {/* Halo lumineux */}
       <div className="absolute left-24 top-1/2 -translate-y-1/2 w-96 h-96 bg-[#10B981]/20 blur-[140px] rounded-full"></div>
@@ -31,29 +41,33 @@ function Hero() {
           transition={{ duration: 1 }}
         >
           <motion.h1
-            className="text-5xl md:text-7xl font-extrabold leading-tight text-white"
+            className={`text-5xl md:text-7xl font-extrabold leading-tight ${
+              theme === "dark" ? "text-white" : "text-slate-900"
+            }`}
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             Hyacinthe
             <br />
-            <span className="text-[#10B981]">
-              Dossakpedji
-            </span>
+            <span className="text-[#10B981]">Dossakpedji</span>
           </motion.h1>
 
           <motion.h2
-            className="mt-6 text-2xl md:text-3xl font-semibold text-white"
+            className={`mt-6 text-2xl md:text-3xl font-semibold ${
+              theme === "dark" ? "text-white" : "text-slate-800"
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            Développeur full stack
+            Développeur Full Stack
           </motion.h2>
 
           <motion.p
-            className="mt-5 text-lg text-gray-300 leading-relaxed"
+            className={`mt-5 text-lg leading-relaxed ${
+              theme === "dark" ? "text-gray-300" : "text-slate-600"
+            }`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
@@ -83,28 +97,32 @@ function Hero() {
             </motion.a>
 
             <motion.a
-  href="/cv.pdf"
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{
-    scale: 1.06,
-    y: -5,
-    backgroundColor: "#10B981",
-    color: "#000",
-  }}
-  whileTap={{ scale: 0.96 }}
-  className="border-2 border-[#10B981] text-[#10B981] px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-colors"
->
-  Voir mon CV
-  <FaEye />
-</motion.a>
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{
+                scale: 1.06,
+                y: -5,
+              }}
+              whileTap={{ scale: 0.96 }}
+              className={`border-2 border-[#10B981] px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all ${
+                theme === "dark"
+                  ? "bg-transparent text-[#10B981] hover:bg-[#10B981] hover:text-black"
+                  : "bg-white/80 backdrop-blur-sm text-[#10B981] hover:bg-[#10B981] hover:text-black"
+              }`}
+            >
+              Voir mon CV
+              <FaEye />
+            </motion.a>
           </motion.div>
         </motion.div>
       </div>
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white"
+        className={`absolute bottom-10 left-1/2 -translate-x-1/2 ${
+          theme === "dark" ? "text-white" : "text-slate-700"
+        }`}
         animate={{ y: [0, 12, 0] }}
         transition={{
           repeat: Infinity,

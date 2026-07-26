@@ -4,35 +4,38 @@ import { Toaster } from "react-hot-toast";
 
 import "./index.css";
 import App from "./App.jsx";
+import { ThemeProvider } from "./context/ThemeContext";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <App />
+    <ThemeProvider>
+      <App />
 
-    <Toaster
-      position="top-right"
-      reverseOrder={false}
-      toastOptions={{
-        duration: 3000,
-        style: {
-          background: "#111827",
-          color: "#fff",
-          border: "1px solid rgba(16,185,129,.4)",
-          borderRadius: "12px",
-        },
-        success: {
-          iconTheme: {
-            primary: "#10B981",
-            secondary: "#fff",
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={{
+          duration: 3000,
+          style: {
+            background: "#111827",
+            color: "#fff",
+            border: "1px solid rgba(16,185,129,.4)",
+            borderRadius: "12px",
           },
-        },
-        error: {
-          iconTheme: {
-            primary: "#EF4444",
-            secondary: "#fff",
+          success: {
+            iconTheme: {
+              primary: "#10B981",
+              secondary: "#fff",
+            },
           },
-        },
-      }}
-    />
+          error: {
+            iconTheme: {
+              primary: "#EF4444",
+              secondary: "#fff",
+            },
+          },
+        }}
+      />
+    </ThemeProvider>
   </StrictMode>
 );

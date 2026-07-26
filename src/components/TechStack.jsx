@@ -16,8 +16,11 @@ import {
 } from "react-icons/si";
 
 import { motion } from "framer-motion";
+import { useTheme } from "../context/ThemeContext";
 
 function TechStack() {
+  const { theme } = useTheme();
+
   const technologies = [
     { name: "HTML5", icon: <FaHtml5 />, color: "#E34F26" },
     { name: "CSS3", icon: <FaCss3Alt />, color: "#1572B6" },
@@ -28,24 +31,41 @@ function TechStack() {
     { name: "MySQL", icon: <SiMysql />, color: "#00758F" },
     { name: "Tailwind", icon: <SiTailwindcss />, color: "#38BDF8" },
     { name: "Git", icon: <FaGitAlt />, color: "#F1502F" },
-    { name: "GitHub", icon: <SiGithub />, color: "#ffffff" },
+    { name: "GitHub", icon: <SiGithub />, color: theme === "dark" ? "#ffffff" : "#111827" },
     { name: "Figma", icon: <SiFigma />, color: "#A259FF" },
   ];
 
   return (
-    <section className="py-24 bg-[#0B0F19] overflow-hidden">
+    <section
+      className={`py-24 overflow-hidden transition-all duration-500 ${
+        theme === "dark"
+          ? "bg-[#0B0F19]"
+          : "bg-gray-50"
+      }`}
+    >
       <div className="text-center mb-14">
-        <h2 className="text-4xl font-bold text-white">
+        <h2
+          className={`text-4xl font-bold ${
+            theme === "dark"
+              ? "text-white"
+              : "text-slate-900"
+          }`}
+        >
           Technologies
         </h2>
 
-        <p className="text-gray-400 mt-3">
+        <p
+          className={`mt-3 ${
+            theme === "dark"
+              ? "text-gray-400"
+              : "text-slate-600"
+          }`}
+        >
           Les technologies que j'utilise pour créer des applications modernes.
         </p>
       </div>
 
       <div className="relative overflow-hidden">
-
         <motion.div
           className="flex gap-8"
           animate={{ x: ["0%", "-50%"] }}
@@ -58,7 +78,11 @@ function TechStack() {
           {[...technologies, ...technologies].map((tech, index) => (
             <div
               key={index}
-              className="min-w-[180px] bg-[#111827] border border-white/10 rounded-2xl p-8 flex flex-col items-center justify-center hover:border-[#D4AF37] transition-all duration-300 hover:-translate-y-2"
+              className={`min-w-45 rounded-2xl p-8 flex flex-col items-center justify-center transition-all duration-300 hover:-translate-y-2 hover:border-[#10B981] ${
+                theme === "dark"
+                  ? "bg-[#111827] border border-white/10"
+                  : "bg-white border border-gray-200 shadow-md hover:shadow-xl"
+              }`}
             >
               <div
                 className="text-6xl mb-4"
@@ -67,13 +91,18 @@ function TechStack() {
                 {tech.icon}
               </div>
 
-              <h3 className="text-white font-semibold">
+              <h3
+                className={`font-semibold ${
+                  theme === "dark"
+                    ? "text-white"
+                    : "text-slate-900"
+                }`}
+              >
                 {tech.name}
               </h3>
             </div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

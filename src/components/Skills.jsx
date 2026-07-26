@@ -73,7 +73,7 @@ function Skills() {
         },
         {
           name: "GitHub",
-          icon: <FaGithub className="text-white text-xl" />,
+          icon: <FaGithub className="text-black dark:text-white text-xl" />,
         },
         {
           name: "VS Code",
@@ -128,7 +128,7 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-28 bg-[#0B0F19]"
+      className="py-28 bg-white dark:bg-[#0B0F19] transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -143,17 +143,19 @@ function Skills() {
             Mes compétences
           </p>
 
-          <h2 className="text-5xl font-bold text-white mt-3">
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mt-3">
             Technologies & Outils
           </h2>
 
-          <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 mt-5 max-w-2xl mx-auto">
             Les technologies que j'utilise pour développer des applications web modernes, performantes et évolutives.
           </p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
+
           {categories.map((category, index) => (
+
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 60 }}
@@ -164,16 +166,23 @@ function Skills() {
               }}
               viewport={{ once: true }}
               whileHover={{ y: -8 }}
-              className="relative overflow-hidden rounded-3xl bg-[#111827] border border-white/10 hover:border-[#10B981]/50 p-8 transition-all duration-500"
+              className="relative overflow-hidden rounded-3xl
+              bg-white dark:bg-[#111827]
+              border border-gray-200 dark:border-white/10
+              hover:border-[#10B981]/50
+              shadow-lg dark:shadow-none
+              p-8 transition-all duration-500"
             >
+
               <div className="absolute -top-16 -right-16 w-44 h-44 rounded-full bg-[#10B981]/10 blur-3xl"></div>
 
               <div className="relative">
+
                 <div className="w-16 h-16 rounded-2xl bg-[#10B981]/10 flex items-center justify-center mb-6">
                   {category.icon}
                 </div>
 
-                <h3 className="text-2xl font-bold text-white mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   {category.title}
                 </h3>
 
@@ -182,19 +191,27 @@ function Skills() {
                     <motion.div
                       key={i}
                       whileHover={{ scale: 1.08 }}
-                      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[#1A2234] border border-white/10 hover:border-[#10B981]/50 transition"
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl
+                      bg-gray-100 dark:bg-[#1A2234]
+                      border border-gray-200 dark:border-white/10
+                      hover:border-[#10B981]/50
+                      transition-all duration-300"
                     >
                       {skill.icon}
 
-                      <span className="text-white font-medium">
+                      <span className="text-gray-800 dark:text-white font-medium">
                         {skill.name}
                       </span>
                     </motion.div>
                   ))}
                 </div>
+
               </div>
+
             </motion.div>
+
           ))}
+
         </div>
 
       </div>

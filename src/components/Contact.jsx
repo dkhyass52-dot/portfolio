@@ -37,7 +37,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="py-32 bg-gradient-to-b from-[#08131F] via-[#0F172A] to-[#08131F]"
+      className="py-32 bg-white dark:bg-linear-to-b dark:from-[#08131F] dark:via-[#0F172A] dark:to-[#08131F] transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -54,11 +54,11 @@ function Contact() {
             Contact
           </p>
 
-          <h2 className="text-5xl font-bold text-white mt-3">
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mt-3">
             Travaillons ensemble
           </h2>
 
-          <p className="text-gray-400 mt-6 max-w-2xl mx-auto leading-8">
+          <p className="text-gray-600 dark:text-gray-400 mt-6 max-w-2xl mx-auto leading-8">
             Vous avez une idée de projet, une collaboration ou une question ?
             N'hésitez pas à me contacter. Je vous répondrai dans les plus brefs délais.
           </p>
@@ -76,7 +76,7 @@ function Contact() {
             className="space-y-6"
           >
 
-            <div className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:border-[#10B981]/50 transition">
+            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-6 hover:border-[#10B981]/50 transition">
 
               <div className="flex items-center gap-5">
 
@@ -85,21 +85,20 @@ function Contact() {
                 </div>
 
                 <div>
-                  <h3 className="text-white font-semibold text-lg">
+                  <h3 className="text-gray-900 dark:text-white font-semibold text-lg">
                     Adresse e-mail
                   </h3>
 
-                  <p className="text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     dkhyass52@gmail.com
                   </p>
-
                 </div>
 
               </div>
 
             </div>
 
-            <div className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:border-[#10B981]/50 transition">
+            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-6 hover:border-[#10B981]/50 transition">
 
               <div className="flex items-center gap-5">
 
@@ -109,11 +108,11 @@ function Contact() {
 
                 <div>
 
-                  <h3 className="text-white font-semibold text-lg">
+                  <h3 className="text-gray-900 dark:text-white font-semibold text-lg">
                     Téléphone
                   </h3>
 
-                  <p className="text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     +229 XX XX XX XX
                   </p>
 
@@ -123,7 +122,7 @@ function Contact() {
 
             </div>
 
-            <div className="rounded-3xl bg-white/5 backdrop-blur-xl border border-white/10 p-6 hover:border-[#10B981]/50 transition">
+            <div className="rounded-3xl bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none p-6 hover:border-[#10B981]/50 transition">
 
               <div className="flex items-center gap-5">
 
@@ -133,11 +132,11 @@ function Contact() {
 
                 <div>
 
-                  <h3 className="text-white font-semibold text-lg">
+                  <h3 className="text-gray-900 dark:text-white font-semibold text-lg">
                     Localisation
                   </h3>
 
-                  <p className="text-gray-400">
+                  <p className="text-gray-600 dark:text-gray-400">
                     Cotonou, Bénin
                   </p>
 
@@ -158,11 +157,10 @@ function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: .7 }}
             viewport={{ once: true }}
-            className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 space-y-6"
+            className="bg-white dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 shadow-lg dark:shadow-none rounded-3xl p-8 space-y-6"
           >
-
-        <div>
-              <label className="block text-white mb-2 font-medium">
+            <div>
+              <label className="block text-gray-800 dark:text-white mb-2 font-medium">
                 Nom complet
               </label>
 
@@ -171,12 +169,19 @@ function Contact() {
                 name="name"
                 placeholder="Votre nom"
                 required
-                className="w-full px-5 py-4 rounded-xl bg-[#111827] border border-white/10 text-white placeholder-gray-500 outline-none focus:border-[#10B981] transition"
+                className="w-full px-5 py-4 rounded-xl
+                bg-white dark:bg-[#111827]
+                border border-gray-300 dark:border-white/10
+                text-gray-900 dark:text-white
+                placeholder-gray-500
+                outline-none
+                focus:border-[#10B981]
+                transition"
               />
             </div>
 
             <div>
-              <label className="block text-white mb-2 font-medium">
+              <label className="block text-gray-800 dark:text-white mb-2 font-medium">
                 Adresse e-mail
               </label>
 
@@ -185,12 +190,19 @@ function Contact() {
                 name="email"
                 placeholder="exemple@email.com"
                 required
-                className="w-full px-5 py-4 rounded-xl bg-[#111827] border border-white/10 text-white placeholder-gray-500 outline-none focus:border-[#10B981] transition"
+                className="w-full px-5 py-4 rounded-xl
+                bg-white dark:bg-[#111827]
+                border border-gray-300 dark:border-white/10
+                text-gray-900 dark:text-white
+                placeholder-gray-500
+                outline-none
+                focus:border-[#10B981]
+                transition"
               />
             </div>
 
             <div>
-              <label className="block text-white mb-2 font-medium">
+              <label className="block text-gray-800 dark:text-white mb-2 font-medium">
                 Votre message
               </label>
 
@@ -199,7 +211,15 @@ function Contact() {
                 name="message"
                 placeholder="Décrivez votre projet ou votre besoin..."
                 required
-                className="w-full px-5 py-4 rounded-xl bg-[#111827] border border-white/10 text-white placeholder-gray-500 outline-none resize-none focus:border-[#10B981] transition"
+                className="w-full px-5 py-4 rounded-xl
+                bg-white dark:bg-[#111827]
+                border border-gray-300 dark:border-white/10
+                text-gray-900 dark:text-white
+                placeholder-gray-500
+                outline-none
+                resize-none
+                focus:border-[#10B981]
+                transition"
               ></textarea>
             </div>
 
@@ -216,17 +236,16 @@ function Contact() {
               Envoyer le message
             </motion.button>
 
-            <p className="text-center text-gray-500 text-sm">
+            <p className="text-center text-gray-600 dark:text-gray-500 text-sm">
               Je réponds généralement sous 24 heures.
             </p>
-
           </motion.form>
 
-        </div>
-      </div>
-    </section>
-  );
+</div>
+
+</div>
+</section>
+);
 }
 
 export default Contact;
-        

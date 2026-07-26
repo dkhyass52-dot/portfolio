@@ -11,80 +11,78 @@ import collier from "../assets/projects/collier.png";
 
 function Projects() {
   const projects = [
-  {
-    title: "Hotel Seguro",
-    category: "Projet académique",
-    year: "2025",
-    description:
-      "Plateforme moderne de réservation d'hôtel avec gestion des chambres, des clients et des réservations.",
-    image: hotelSeguro,
-    tech: ["PHP", "MySQL", "Bootstrap"],
-    demo: "http://localhost/HOTEL_SEGURO/index.php",
-    github: "#",
-  },
-
-  {
-    title: "Hotel Seguro espace admin",
-    category: "Projet académique",
-    year: "2025",
-    description:
-      "Plateforme moderne de réservation d'hôtel avec gestion des chambres, des clients et des réservations.",
-    image: hotelSeguro,
-    tech: ["PHP", "MySQL", "Tailwind CSS"],
-    demo: "http://localhost/HOTEL_SEGURO/index.php",
-    github: "#",
-  },
-  {
-    title: "Portfolio",
-    category: "Portfolio",
-    year: "2025",
-    description:
-      "Portfolio personnel développé avec React, Tailwind CSS et Framer Motion.",
-    image: portfolio,
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
-    demo: "http://localhost:5173",
-    github: "#",
-  },
-  {
-    title: "StreamHyass",
-    category: "E-commerce",
-    year: "2026",
-    description:
-      "Boutique en ligne complète avec gestion des produits, commandes et utilisateurs.",
-    image: streamHyass,
-    tech: ["Laravel", "MySQL"],
-    demo: "http://streamhyass.vercel.app",
-    github: "#",
-  },
-
-  {
-    title: "Gestion de dépenses",
-    category: "Application Web",
-    year: "2026",
-    description:
-      "Application de gestion de dépenses avec suivi des transactions et des catégories.",
-    image: gestionDepenses,
-    tech: ["Laravel", "MySQL", "Bootstrap"],
-    demo: "http://127.0.0.1:8000/dashboard",
-    github: "#",
-  },
-  {
-    title: "Collier",
-    category: "Page de vente",
-    year: "2026",
-    description:
-      "Plateforme de blog avec authentification, gestion des articles, catégories et commentaires.",
-    image: collier,
-    tech: ["Laravel", "MySQL", "Blade"],
-    demo: "http://localhost/ecollier/index.php",
-    github: "#",
-  },
-];
+    {
+      title: "Hotel Seguro",
+      category: "Projet académique",
+      year: "2025",
+      description:
+        "Plateforme moderne de réservation d'hôtel avec gestion des chambres, des clients et des réservations.",
+      image: hotelSeguro,
+      tech: ["PHP", "MySQL", "Tailwind CSS"],
+      demo: "http://localhost/HOTEL_SEGURO/index.php",
+      github: "https://github.com/dkhyass52-dot/seguro-hotel.git",
+    },
+    {
+      title: "Hotel Seguro espace admin",
+      category: "Projet académique",
+      year: "2025",
+      description:
+        "Plateforme moderne de réservation d'hôtel avec gestion des chambres, des clients et des réservations.",
+      image: hotelSeguro,
+      tech: ["PHP", "MySQL", "Tailwind CSS"],
+      demo: "http://localhost/HOTEL_SEGURO/admin/dashboard.php",
+      github: "https://github.com/dkhyass52-dot/seguro-hotel-admin.git",
+    },
+    {
+      title: "Portfolio",
+      category: "Portfolio",
+      year: "2025",
+      description:
+        "Portfolio personnel développé avec React, Tailwind CSS et Framer Motion.",
+      image: portfolio,
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      demo: "http://localhost:5173",
+      github: "https://github.com/dkhyass52-dot/portfolio.git",
+    },
+    {
+      title: "StreamHyass",
+      category: "E-commerce",
+      year: "2026",
+      description:
+        "Boutique en ligne complète avec gestion des produits, commandes et utilisateurs.",
+      image: streamHyass,
+      tech: ["Laravel", "MySQL"],
+      demo: "http://streamhyass.vercel.app",
+      github: "https://github.com/dkhyass52-dot/streamhyass.git",
+    },
+    {
+      title: "Gestion de dépenses",
+      category: "Application Web",
+      year: "2026",
+      description:
+        "Application de gestion de dépenses avec suivi des transactions et des catégories.",
+      image: gestionDepenses,
+      tech: ["Laravel", "MySQL", "Bootstrap"],
+      demo: "http://127.0.0.1:8000/dashboard",
+      github: "https://github.com/dkhyass52-dot/gestion-depense.git",
+    },
+    {
+      title: "Collier",
+      category: "Page de vente",
+      year: "2026",
+      description:
+        "Plateforme de blog avec authentification, gestion des articles, catégories et commentaires.",
+      image: collier,
+      tech: ["Laravel", "MySQL", "Blade"],
+      demo: "http://localhost/ecollier/index.php",
+      github: "https://github.com/dkhyass52-dot/collier.git",
+    },
+  ];
 
   return (
     <section
       id="projects"
-      className="py-32 bg-gradient-to-b from-[#08131F] to-[#0F172A]"
+      className="py-32 bg-white dark:bg-linear-to-b dark:from-[#08131F] dark:to-[#0F172A] transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-6">
 
@@ -100,11 +98,11 @@ function Projects() {
             Portfolio
           </p>
 
-          <h2 className="text-5xl font-bold text-white mt-3">
+          <h2 className="text-5xl font-bold text-gray-900 dark:text-white mt-3">
             Mes projets
           </h2>
 
-          <p className="text-gray-400 mt-5 max-w-2xl mx-auto leading-8">
+          <p className="text-gray-600 dark:text-gray-400 mt-5 max-w-2xl mx-auto leading-8">
             Une sélection de projets réalisés avec les technologies modernes du web.
           </p>
         </motion.div>
@@ -123,13 +121,13 @@ function Projects() {
                 delay: index * 0.15,
               }}
               viewport={{ once: true }}
-              whileHover={{
-                y: -10,
-              }}
+              whileHover={{ y: -10 }}
               className="group relative overflow-hidden rounded-3xl
-              bg-white/5 backdrop-blur-xl
-              border border-white/10
+              bg-white dark:bg-white/5
+              backdrop-blur-xl
+              border border-gray-200 dark:border-white/10
               hover:border-[#10B981]/40
+              shadow-lg dark:shadow-none
               transition-all duration-500"
             >
 
@@ -145,7 +143,7 @@ function Projects() {
                   className="w-full h-64 object-cover transition duration-700 group-hover:scale-110"
                 />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent"></div>
 
                 <span className="absolute top-5 left-5 px-4 py-1 rounded-full bg-[#10B981] text-black text-xs font-bold">
                   {project.category}
@@ -179,17 +177,16 @@ function Projects() {
                   </div>
 
                 </div>
-
               </div>
 
               {/* Contenu */}
-              <div className="p-7">
+                            <div className="p-7">
 
-                <h3 className="text-2xl font-bold text-white mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                   {project.title}
                 </h3>
 
-                <p className="text-gray-400 leading-7 mb-6">
+                <p className="text-gray-600 dark:text-gray-400 leading-7 mb-6">
                   {project.description}
                 </p>
 
@@ -211,31 +208,31 @@ function Projects() {
                 <div className="flex gap-4">
 
                   <motion.a
-  href={project.demo}
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{
-    scale: 1.05,
-    boxShadow: "0 15px 35px rgba(16,185,129,.35)",
-  }}
-  whileTap={{ scale: 0.95 }}
-  className="flex-1 flex items-center justify-center gap-2 bg-[#10B981] text-black py-3 rounded-xl font-semibold"
->
-  <FaExternalLinkAlt />
-  Démo
-</motion.a>
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 15px 35px rgba(16,185,129,.35)",
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 flex items-center justify-center gap-2 bg-[#10B981] text-black py-3 rounded-xl font-semibold"
+                  >
+                    <FaExternalLinkAlt />
+                    Démo
+                  </motion.a>
 
-<motion.a
-  href={project.github}
-  target="_blank"
-  rel="noopener noreferrer"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
-  className="flex-1 flex items-center justify-center gap-2 border border-[#10B981] text-[#10B981] py-3 rounded-xl font-semibold hover:bg-[#10B981] hover:text-black transition"
->
-  <FaGithub />
-  GitHub
-</motion.a>
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 flex items-center justify-center gap-2 border border-[#10B981] text-[#10B981] py-3 rounded-xl font-semibold hover:bg-[#10B981] hover:text-black transition"
+                  >
+                    <FaGithub />
+                    GitHub
+                  </motion.a>
 
                 </div>
 
