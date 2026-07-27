@@ -50,16 +50,10 @@ function TechStack() {
             theme === "dark" ? "text-white" : "text-slate-900"
           }`}
         >
-          Tech Stack
+          Technologies & Outils
         </h2>
 
-        <p
-          className={`mt-3 text-sm md:text-base ${
-            theme === "dark" ? "text-gray-400" : "text-slate-600"
-          }`}
-        >
-          Les technologies que j'utilise au quotidien.
-        </p>
+       
       </div>
 
       <div className="relative overflow-hidden">

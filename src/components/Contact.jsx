@@ -37,7 +37,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 md:py-24 lg:py-32 bg-white dark:bg-linear-to-b dark:from-[#08131F] dark:via-[#0F172A] dark:to-[#08131F] transition-colors duration-500"
+      className="py-16 md:py-15 lg:py-15 bg-white dark:bg-linear-to-b dark:from-[#08131F] dark:via-[#0F172A] dark:to-[#08131F] transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -112,7 +112,7 @@ function Contact() {
                   </h3>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
-                    +229 XX XX XX XX
+                    +229 01 52 85 25 93
                   </p>
                 </div>
 
@@ -134,7 +134,7 @@ function Contact() {
                   </h3>
 
                   <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">
-                    Cotonou, Bénin
+                    Abomey-calavi, Bénin
                   </p>
                 </div>
 

@@ -64,7 +64,7 @@ function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 md:py-28 bg-white dark:bg-[#0B0F19] transition-colors duration-500"
+      className="py-16 md:py-15 bg-white dark:bg-[#0B0F19] transition-colors duration-500"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
 

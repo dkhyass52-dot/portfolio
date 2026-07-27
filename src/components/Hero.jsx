@@ -1,4 +1,7 @@
 import { motion } from "framer-motion";
+import { ReactTyped } from "react-typed";
+import Typed from "typed.js";
+import { useEffect, useRef } from "react";
 import { FaArrowRight, FaEye } from "react-icons/fa";
 import { useTheme } from "../context/ThemeContext";
 import heroDark from "../assets/images/hero-light2.png";
@@ -6,6 +9,44 @@ import heroLight from "../assets/images/hero-light2.png";
 
 function Hero() {
   const { theme } = useTheme();
+  const nameRef = useRef(null);
+const jobRef = useRef(null);
+const descRef = useRef(null);
+
+  useEffect(() => {
+  const typedName = new Typed(nameRef.current, {
+    strings: ["Hyacinthe DOSSAKPEDJI"],
+    typeSpeed: 60,
+    showCursor: true,
+    cursorChar: "|",
+    onComplete: () => {
+      typedName.cursor.remove();
+
+      const typedJob = new Typed(jobRef.current, {
+        strings: ["Je suis un Développeur Full Stack"],
+        typeSpeed: 30,
+        showCursor: true,
+        cursorChar: "|",
+        onComplete: () => {
+          typedJob.cursor.remove();
+
+          new Typed(descRef.current, {
+            strings: [
+              "Passionné par le développement web, je conçois des expériences numériques élégantes, performantes et intuitives. De l'idée au déploiement, je développe des solutions modernes qui allient design, performance et fiabilité.",
+            ],
+            typeSpeed: 10,
+            showCursor: true,
+            cursorChar: "|",
+          });
+        },
+      });
+    },
+  });
+
+  return () => {
+    typedName.destroy();
+  };
+}, []);
 
   return (
     <motion.section
@@ -33,88 +74,72 @@ function Hero() {
       <div className="absolute left-1/2 md:left-24 top-1/2 -translate-x-1/2 md:translate-x-0 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-[#10B981]/20 blur-[120px] rounded-full"></div>
 
       {/* Contenu */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 md:px-8">
+      <div className="relative z-15 space-y-10">
+        <h1
+  className={`text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight ${
+    theme === "dark"
+      ? "text-white"
+      : "text-[#0F172A]"
+  }`}
+>
+  <span ref={nameRef}></span>
+</h1>
+
+        <h2
+  className={`mt-5 text-xl sm:text-2xl md:text-3xl font-semibold ${
+    theme === "dark" ? "text-[#10B981]" : "text-[#0D9668]"
+  }`}
+>
+  <span ref={jobRef}></span>
+</h2>
+
+        <p
+  className={`mt-6 max-w-2xl text-base md:text-lg leading-6 font-medium ${
+    theme === "dark" ? "text-gray-300" : "text-gray-700"
+  }`}
+>
+  <span ref={descRef}></span>
+</p>
+
+        {/* Boutons */}
         <motion.div
-          className="max-w-xl text-center md:text-left mx-auto md:mx-0"
-          initial={{ opacity: 0, x: -60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1 }}
+          className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2 }}
         >
-          <motion.h1
-            className={`text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight ${
-              theme === "dark" ? "text-white" : "text-slate-900"
+          <motion.a
+            href="#projects"
+            whileHover={{
+              scale: 1.06,
+              y: -5,
+              boxShadow: "0 15px 35px rgba(16,185,129,.45)",
+            }}
+            whileTap={{ scale: 0.96 }}
+            className="w-full sm:w-auto justify-center bg-[#10B981] text-black px-8 py-4 rounded-xl font-semibold flex items-center gap-3"
+          >
+            Mes projets
+            <FaArrowRight />
+          </motion.a>
+
+          <motion.a
+            href="/cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              scale: 1.06,
+              y: -5,
+            }}
+            whileTap={{ scale: 0.96 }}
+            className={`w-full sm:w-auto justify-center border-2 border-[#10B981] px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all ${
+              theme === "dark"
+                ? "bg-transparent text-[#10B981] hover:bg-[#10B981] hover:text-black"
+                : "bg-white/80 backdrop-blur-sm text-[#10B981] hover:bg-[#10B981] hover:text-black"
             }`}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Hyacinthe
-            <br />
-            <span className="text-[#10B981]">Dossakpedji</span>
-          </motion.h1>
-
-          <motion.h2
-            className={`mt-5 text-xl sm:text-2xl md:text-3xl font-semibold ${
-              theme === "dark" ? "text-white" : "text-slate-800"
-            }`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-          >
-            Développeur Full Stack
-          </motion.h2>
-
-          <motion.p
-            className={`mt-5 text-base sm:text-lg leading-relaxed max-w-lg mx-auto md:mx-0 ${
-              theme === "dark" ? "text-gray-300" : "text-slate-900"
-            }`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.9 }}
-          >
-            Créateur d'applications web modernes.
-          </motion.p>
-
-          {/* Boutons */}
-          <motion.div
-            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center md:justify-start"
-            initial={{ opacity: 0, y: 25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2 }}
-          >
-            <motion.a
-              href="#projects"
-              whileHover={{
-                scale: 1.06,
-                y: -5,
-                boxShadow: "0 15px 35px rgba(16,185,129,.45)",
-              }}
-              whileTap={{ scale: 0.96 }}
-              className="w-full sm:w-auto justify-center bg-[#10B981] text-black px-8 py-4 rounded-xl font-semibold flex items-center gap-3"
-            >
-              Mes projets
-              <FaArrowRight />
-            </motion.a>
-
-            <motion.a
-              href="/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{
-                scale: 1.06,
-                y: -5,
-              }}
-              whileTap={{ scale: 0.96 }}
-              className={`w-full sm:w-auto justify-center border-2 border-[#10B981] px-8 py-4 rounded-xl font-semibold flex items-center gap-3 transition-all ${
-                theme === "dark"
-                  ? "bg-transparent text-[#10B981] hover:bg-[#10B981] hover:text-black"
-                  : "bg-white/80 backdrop-blur-sm text-[#10B981] hover:bg-[#10B981] hover:text-black"
-              }`}
-            >
-              Voir mon CV
-              <FaEye />
-            </motion.a>
-          </motion.div>
+            Voir mon CV
+            <FaEye />
+          </motion.a>
         </motion.div>
       </div>
     </motion.section>

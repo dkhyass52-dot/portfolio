@@ -12,7 +12,7 @@ function About() {
   return (
     <section
       id="about"
-      className="py-20 md:py-28 bg-white dark:bg-[#0F172A] transition-colors duration-500 overflow-hidden"
+      className="py-15 md:py-10 bg-white dark:bg-[#0F172A] transition-colors duration-500 overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
 
