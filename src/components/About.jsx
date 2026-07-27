@@ -85,7 +85,7 @@ function About() {
                       </span>
 
                       <span className="text-gray-900 dark:text-white text-xs sm:text-sm font-medium">
-                        Disponible pour des projets
+                        Disponible pour vos projets
                       </span>
 
                     </div>

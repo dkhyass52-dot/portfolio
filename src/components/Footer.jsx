@@ -154,9 +154,7 @@ function Footer() {
           </p>
 
           <p className="flex items-center gap-2 text-gray-500">
-            Développé avec
-            <FaHeart className="text-red-500" />
-            en React
+            Développé par <span className="text-[#10B981] font-semibold">Hyass Dev</span>
           </p>
         </div>
       </div>
