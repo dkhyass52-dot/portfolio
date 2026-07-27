@@ -16,7 +16,7 @@ const descRef = useRef(null);
   useEffect(() => {
   const typedName = new Typed(nameRef.current, {
     strings: ["Hyacinthe DOSSAKPEDJI"],
-    typeSpeed: 60,
+    typeSpeed: 1,
     showCursor: true,
     cursorChar: "|",
     onComplete: () => {
@@ -24,7 +24,7 @@ const descRef = useRef(null);
 
       const typedJob = new Typed(jobRef.current, {
         strings: ["Je suis un Développeur Full Stack"],
-        typeSpeed: 30,
+        typeSpeed: 1,
         showCursor: true,
         cursorChar: "|",
         onComplete: () => {
@@ -34,7 +34,7 @@ const descRef = useRef(null);
             strings: [
               "Passionné par le développement web, je conçois des expériences numériques élégantes, performantes et intuitives. De l'idée au déploiement, je développe des solutions modernes qui allient design, performance et fiabilité.",
             ],
-            typeSpeed: 10,
+            typeSpeed: 1,
             showCursor: true,
             cursorChar: "|",
           });
