@@ -11,7 +11,7 @@ import hotelSeguro from "../assets/projects/seguro.png";
 import portfolio from "../assets/projects/portfolio.png";
 import streamHyass from "../assets/projects/stream.png";
 import gestionDepenses from "../assets/projects/gestion.png";
-import collier from "../assets/projects/collier.png";
+import freshJoy from "../assets/projects/freshjoy.png";
 import seguroAdmin from "../assets/projects/seguroback.png";
 
 function Projects() {
@@ -83,14 +83,14 @@ function Projects() {
       github: "https://github.com/dkhyass52-dot/gestion-depense.git",
     },
     {
-      title: "Collier",
+      title: "FreshJoy",
       category: "Page de vente",
       description:
-        "Application de présentation et vente de colliers avec interface moderne.",
-      image: collier,
-      tech: ["Laravel", "MySQL", "Blade"],
-      demo: "http://localhost/ecollier/index.php",
-      github: "https://github.com/dkhyass52-dot/collier.git",
+        "Application de présentation et vente de yaourt, bissap avec interface moderne.",
+      image: freshJoy,
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      demo: "https://joycefresh.vercel.app/",
+      github: "https://github.com/dkhyass52-dot/joycefresh.git",
     },
   ];
 
